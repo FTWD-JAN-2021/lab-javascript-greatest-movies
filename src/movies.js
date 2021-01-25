@@ -51,7 +51,7 @@ function ratesAverage(myArr) {
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
-function dramaMoviesRate (array) {
+function dramaMoviesRate(array) {
   let filteredDramaMovies = array.filter((eachMovie) => {
     return eachMovie.genre.includes('Drama')
   })
@@ -61,18 +61,18 @@ function dramaMoviesRate (array) {
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 
-function orderByYear (array) {
+function orderByYear(array) {
   console.log(array)
-  const result=  array.sort((a, b) => {
+  const result = array.sort((a, b) => {
     if (a.year > b.year) {
       return 1;
     } else if (b.year > a.year) {
       return -1;
     } else {
-      
+
       return a.title.localeCompare(b.title);
     }
-  }) 
+  })
   return [...result];
 }
 
@@ -80,15 +80,15 @@ function orderByYear (array) {
 
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-function orderAlphabetically(arr){
+function orderAlphabetically(arr) {
   //sort but title
-   let sortedArray = [...arr].sort((a, b) => {
-      return (a.title.localeCompare(b.title)) //it is either 0,1,-1
-    
+  let sortedArray = [...arr].sort((a, b) => {
+    return (a.title.localeCompare(b.title)) //it is either 0,1,-1
+
 
   })
 
-  let first20titles = sortedArray.slice(0,20).map(item => {
+  let first20titles = sortedArray.slice(0, 20).map(item => {
     return item.title
   })
 
@@ -97,5 +97,14 @@ function orderAlphabetically(arr){
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
+
+let testString = "1h 36min"
+function turnHoursToMinutes(testString) {
+  let hours = parseInt(testString)
+  return hours
+
+}
+
+
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
