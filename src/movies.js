@@ -11,8 +11,8 @@ function getAllDirectors(dirArr) {
 
 function howManyMovies(array) {
   return array.filter((movie) => {
-    const directedStevenS = movie.director == "Steven Spielberg";
-    const dramaMovie = movie.genre.includes("Drama");
+    const directedStevenS = movie.director == 'Steven Spielberg';
+    const dramaMovie = movie.genre.includes('Drama');
     return directedStevenS && dramaMovie;
   }).length;
 }
@@ -53,7 +53,7 @@ function ratesAverage(myArr) {
 
 function dramaMoviesRate(array) {
   let filteredDramaMovies = array.filter((eachMovie) => {
-    return eachMovie.genre.includes("Drama");
+    return eachMovie.genre.includes('Drama');
   });
 
   return ratesAverage(filteredDramaMovies);
@@ -94,36 +94,40 @@ function orderAlphabetically(arr) {
 
 function turnHoursToMinutes(arr) {
   let newArr = arr.map((movie) => {
-    let eachMovie = {...movie};
-    let words = eachMovie.duration.split(" ");
+    let eachMovie = { ...movie };
+    let words = eachMovie.duration.split(' ');
     let hours = parseInt(words[0]);
-    if (words[0].includes('m'))
-    {
-      eachMovie.duration = parseInt(words[0])
+    if (words[0].includes('m')) {
+      eachMovie.duration = parseInt(words[0]);
     } else {
-    
-    let minutes = 0;
-    if (words[1]) {
-      minutes = parseInt(words[1]);
-    }
+      let minutes = 0;
+      if (words[1]) {
+        minutes = parseInt(words[1]);
+      }
 
-    let totalTime = hours * 60 + minutes;
-    eachMovie.duration = totalTime;
-  }
+      let totalTime = hours * 60 + minutes;
+      eachMovie.duration = totalTime;
+    }
     return eachMovie;
   });
-  console.log(arr)
-  console.log(newArr)
+  console.log(arr);
+  console.log(newArr);
   return newArr;
 }
 
 function stringHoursToMinutes(duration) {
-  return Number(duration
-    .toString()
-    .replace(
-      /(\d+h)?\s*(\d+min)?/,
-      (_, h, m) => parseInt(h || 0) * 60 + parseInt(m || 0) || ""
-    ))
+  return Number(
+    duration
+      .toString()
+      .replace(
+        /(\d+h)?\s*(\d+min)?/,
+        (_, h, m) => parseInt(h || 0) * 60 + parseInt(m || 0) || ''
+      )
+  );
 }
+
+// function anotherVersion(duration) {
+//   return eval(duration.replace('h', '*60+').replace('min', ''));
+// }
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
