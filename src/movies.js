@@ -92,7 +92,6 @@ function orderAlphabetically(arr) {
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
-let testString = "1h 36min";
 function turnHoursToMinutes(arr) {
   let newArr = arr.map((movie) => {
     let eachMovie = {...movie};
@@ -116,6 +115,15 @@ function turnHoursToMinutes(arr) {
   console.log(arr)
   console.log(newArr)
   return newArr;
+}
+
+function stringHoursToMinutes(duration) {
+  return Number(duration
+    .toString()
+    .replace(
+      /(\d+h)?\s*(\d+min)?/,
+      (_, h, m) => parseInt(h || 0) * 60 + parseInt(m || 0) || ""
+    ))
 }
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
